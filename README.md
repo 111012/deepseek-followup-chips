@@ -37,6 +37,14 @@ DeepSeek 追问建议
     npm test
     npm run test:e2e   # 需要 Node 18+
 
+
+
+
+    
+不能商用!!!
+不能商用!!!
+侵权联系我邮箱删除
+
 详细原理、选择器维护、已知风险：docs/DETAILS.md
 
 License
