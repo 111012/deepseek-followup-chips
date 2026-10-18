@@ -1,0 +1,88 @@
+/*
+ * DeepSeek 追问建议 — chips 样式
+ * 颜色使用半透明灰，并按 body.dark 显式适配浅色 / 深色主题。
+ */
+
+.dsfs-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 12px 0 2px;
+  padding: 0;
+  animation: dsfs-chips-in 160ms ease-out both;
+}
+
+.dsfs-chip {
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  margin: 0;
+  padding: 6px 12px;
+  border: 1px solid rgba(127, 127, 127, 0.28);
+  border-radius: 999px;
+  background: rgba(127, 127, 127, 0.09);
+  color: inherit;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition:
+    background-color 140ms ease,
+    border-color 140ms ease,
+    transform 140ms ease;
+}
+
+/* DeepSeek 在 body 上标记 dark；显式给颜色，避免继承到某些页面的异常 body 颜色 */
+body.dark .dsfs-chip {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+body:not(.dark) .dsfs-chip {
+  color: rgba(24, 24, 27, 0.86);
+}
+
+.dsfs-chip:hover {
+  background: rgba(77, 107, 254, 0.14);
+  border-color: rgba(77, 107, 254, 0.45);
+}
+
+.dsfs-chip:active {
+  transform: scale(0.98);
+}
+
+.dsfs-chip:focus-visible {
+  outline: 2px solid rgba(77, 107, 254, 0.65);
+  outline-offset: 2px;
+}
+
+.dsfs-chip--picked {
+  background: rgba(77, 107, 254, 0.2);
+  border-color: rgba(77, 107, 254, 0.55);
+}
+
+@keyframes dsfs-chips-in {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dsfs-chips {
+    animation: none;
+  }
+  .dsfs-chip {
+    transition: none;
+  }
+}

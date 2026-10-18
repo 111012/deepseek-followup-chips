@@ -1,0 +1,11 @@
+{
+  "name": "deepseek-followup-chips",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DeepSeek 网页版追问建议浏览器扩展",
+  "scripts": {
+    "test": "node tests/core.test.mjs && node tests/pow.test.mjs",
+    "test:e2e": "node tests/e2e-background.test.mjs"
+  }
+}
